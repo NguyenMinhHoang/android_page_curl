@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/build/intermediates/res/merged/debug/drawable_road_rage.jpg.flat",
+        "source": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/src/main/res/drawable/road_rage.jpg"
+    },
+    {
+        "merged": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/build/intermediates/res/merged/debug/drawable_obama.jpg.flat",
+        "source": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/src/main/res/drawable/obama.jpg"
+    },
+    {
+        "merged": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/build/intermediates/res/merged/debug/layout_main.xml.flat",
+        "source": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/build/intermediates/res/merged/debug/drawable_world.gif.flat",
+        "source": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/src/main/res/drawable/world.gif"
+    },
+    {
+        "merged": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/build/intermediates/res/merged/debug/drawable_taipei_101.jpg.flat",
+        "source": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/src/main/res/drawable/taipei_101.jpg"
+    },
+    {
+        "merged": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/build/intermediates/res/merged/debug/drawable_icon.png.flat",
+        "source": "/Users/iMac_27/Documents/page_curl/android_page_curl/app/src/main/res/drawable/icon.png"
+    }
+]
