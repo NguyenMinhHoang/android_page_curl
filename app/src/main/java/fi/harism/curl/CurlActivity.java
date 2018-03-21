@@ -24,6 +24,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 
 /**
  * Simple Activity for curl testing.
@@ -92,8 +94,8 @@ public class CurlActivity extends Activity {
 			Canvas c = new Canvas(b);
 			Drawable d = getResources().getDrawable(mBitmapIds[index]);
 
-			int margin = 7;
-			int border = 3;
+			int margin = 0;
+			int border = 0;
 			Rect r = new Rect(margin, margin, width - margin, height - margin);
 
 			int imageWidth = r.width() - (border * 2);
@@ -124,13 +126,34 @@ public class CurlActivity extends Activity {
 			return b;
 		}
 
+		private Bitmap loadPage(int width, int height) {
+
+			LayoutInflater li = LayoutInflater.from(CurlActivity.this);
+			View view = li.inflate(R.layout.page2, null);
+
+			/*view.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+					View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));*/
+			view.measure(width, height);
+			/*view.layout(0, 0, view.getMeasuredWidth(),view.getMeasuredHeight());*/
+			view.layout(0, 0, width, height);
+
+			Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+			Canvas canvas = new Canvas(bitmap);
+			view.draw(canvas);
+			return bitmap;
+			/*view.setDrawingCacheEnabled(true);
+			view.buildDrawingCache();
+			return view.getDrawingCache();*/
+		}
+
 		@Override
 		public void updatePage(CurlPage page, int width, int height, int index) {
 
 			switch (index) {
 			// First case is image on front side, solid colored back.
 			case 0: {
-				Bitmap front = loadBitmap(width, height, 0);
+				//Bitmap front = loadBitmap(width, height, 0);
+				Bitmap front = loadPage(width, height);
 				page.setTexture(front, CurlPage.SIDE_FRONT);
 				page.setColor(Color.rgb(180, 180, 180), CurlPage.SIDE_BACK);
 				break;
@@ -166,6 +189,7 @@ public class CurlActivity extends Activity {
 			// scenario only one texture is used and shared for both sides.
 			case 4:
 				Bitmap front = loadBitmap(width, height, 0);
+				//Bitmap front = loadPage(width, height);
 				page.setTexture(front, CurlPage.SIDE_BOTH);
 				page.setColor(Color.argb(127, 255, 255, 255),
 						CurlPage.SIDE_BACK);
@@ -186,7 +210,8 @@ public class CurlActivity extends Activity {
 				mCurlView.setMargins(.1f, .05f, .1f, .05f);
 			} else {
 				mCurlView.setViewMode(CurlView.SHOW_ONE_PAGE);
-				mCurlView.setMargins(.1f, .1f, .1f, .1f);
+				//mCurlView.setMargins(.1f, .1f, .1f, .1f);
+				mCurlView.setMargins(0f, 0f, 0f, 0f);
 			}
 		}
 	}
